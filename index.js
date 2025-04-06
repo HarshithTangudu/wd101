@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function () {
             <td class="border border-black p-2 w-[250px]">${data.email}</td>
             <td class="border border-black p-2 w-[200px]">${data.password}</td>
             <td class="border border-black p-2 w-[200px]">${data.dob}</td>
-            <td class="border border-black p-2 w-[150px]">${data.acceptTerms ? "Yes" : "No"}</td>
+            <td class="border border-black p-2 w-[150px]">${data.acceptTerms}</td>
         `;
     }
 });
