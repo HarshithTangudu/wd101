@@ -1,65 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registration Form (Wd101)</title>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Registration Form</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-    <form id="registrationForm">
-        <div class=" h-[400px] w-[400px] container mx-auto p-4 border-blue-500 border-2 rounded-lg shadow-lg mt-10">
-            <h1 class="text-2xl font-bold mb-4 text-center">Registration Form</h1>
-            <div class="flex mb-4">
-                <label for="name" class="text-2xl text-gray-1000 ml-3">Name:</label>
-                <input type="text" id="name" name="name" class=" p-2 border border-gray-300 rounded w-[175px] ml-auto" required>
-            </div>
-            <div class="flex mb-4">
-                <label for="email" class="text-2xl text-gray-1000 ml-3">Email:</label>
-                <input type="email" id="email" name="email" class=" p-2 border border-gray-300 rounded w-[175px] ml-auto" required> 
-            </div>
-            <div class="flex mb-4">
-                <label for="password" class="text-2xl text-gray-1000 ml-3">Password:</label>
-                <input type="password" id="password" name="password" class=" p-2 border border-gray-300 rounded w-[175px] ml-auto" required>
-            </div>
-            <div class="flex mb-4">
-                <label for="dob" class="block text-2xl text-gray-1000 ml-3">Date of Birth:</label>
-                <input 
-                    type="date" 
-                    id="dob" 
-                    class="p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 w-[175px] ml-auto"
-                    name="dob"
-                    required
-                >
-            </div>
-            <div class="flex mb-4">
-                <input type="checkbox" id="terms" name="accept" class="ml-3" required>
-                <label for="terms" class="text-gray-1000 ml-1 text-xl">Accept Terms and Conditions</label>
-            </div>
-            <button type="submit" class="bg-green-500 border-2 rounded text-white p-2 ml-3 hover:bg-green-700" id="submit">Submit</button>
-            
+  <!-- Container for the registration form -->
+  <div class="relative flex min-h-screen flex-col justify-center overflow-hidden py-6 bg-gray-50">
+    <div class="relative bg-white px-6 pb-5 shadow-xl ring-1 ring-gray-900/5 sm:mx-auto sm:max-w-lg sm:rounded-lg sm:px-10">
+      <div class="mx-auto max-w-md">
+        <h2 class="text-2xl text-center font-bold my-5">Registration Form</h2>
+        <div class="divide-y divide-gray-300/50">
+          <div class="space-y-6 text-base leading-7 text-gray-600">
+            <form id="user_form">
+              <!-- Name Input -->
+              <label for="name" class="text-md w-40 inline-block font-medium leading-5 text-gray-700">Name</label>
+              <input type="text" id="name" name="name" class="bg-gray-100 inline-block rounded-lg shadow-md py-3 px-4 mb-5 text-base placeholder-gray-500" placeholder="Enter full name" required /><br />
+              
+              <!-- Email Input -->
+              <label for="email" class="text-md w-40 inline-block font-medium leading-5 text-gray-700">Email</label>
+              <input type="email" id="email" name="email" class="bg-gray-100 inline-block rounded-lg shadow-md py-3 px-4 mb-5 text-base placeholder-gray-500" placeholder="Enter email" required /><br />
+              
+              <!-- Password Input -->
+              <label for="password" class="text-md w-40 inline-block font-medium leading-5 text-gray-700">Password</label>
+              <input type="password" id="password" name="password" class="bg-gray-100 inline-block rounded-lg shadow-md py-3 px-4 mb-5 text-base placeholder-gray-500" placeholder="Enter password" required /><br />
+              
+              <!-- Date of Birth Input -->
+              <label for="dob" class="text-md w-40 inline-block font-medium leading-5 text-gray-700">Date of Birth</label>
+              <input type="date" id="dob" name="dob" class="bg-gray-100 inline-block rounded-lg shadow-md py-3 px-4 mb-5 text-base placeholder-gray-500" required /><br />
+              
+              <!-- Terms & Conditions Checkbox -->
+              <label for="acceptTerms" class="text-md w-50 inline-block font-medium leading-5 text-gray-700 mr-4">Accept Terms & Conditions</label>
+              <input type="checkbox" id="acceptTerms" name="acceptTerms" class="bg-gray-100 inline-block shadow-md mb-5" required /><br />
+              
+              <!-- Submit Button -->
+              <button type="submit" id="submit" class="w-fit rounded-lg shadow-lg px-5 py-3 bg-green-500 text-white hover:bg-green-400 focus:outline-none block">Submit</button>
+            </form>
+          </div>
         </div>
-    </form>
-    <div class="container w-[1200px] h-[200px] mx-auto p-4 mt-20">
-        <h1 class="text-2xl font-bold mb-4 text-center">Entries</h1>
-        <table class="w-full border border-black" >
-            <thead>
-                <tr>
-                    <th class="border border-black p-2 w-[200px]">Name</th>
-                    <th class="border border-black p-2 w-[250px]">Email</th>
-                    <th class="border border-black p-2 w-[200px]">Password</th>
-                    <th class="border border-black p-2 w-[200px]">Dob </th>
-                    <th class="border border-black p-2 w-[150px]">Accepted Terms?</th>
-                </tr>
-            </thead>
-            <tbody id="userTableBody">
-            </tbody>
-
-        </table>
-
+      </div>
     </div>
-    
+  </div>
+
+  <!-- Container for displaying entries -->
+  <div class="relative bg-white px-4 mt-5 pt-10 pb-8 shadow-xl ring-1 ring-gray-900/5 sm:mx-auto sm:rounded-lg sm:px-10">
+    <div class="mx-auto">
+      <h2 class="text-xl text-center font-bold">Entries</h2>
+      <div class="divide-y divide-gray-300/50" id="user-entries"></div>
+    </div>
+  </div>
+
+  <!-- Linking JavaScript -->
+  <script src="index.js"></script>
 </body>
-<script src="index.js"></script>
 </html>
